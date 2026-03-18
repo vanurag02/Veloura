@@ -8,9 +8,7 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-around py-5 font-semibold">
       <NavLink to="/">
-        <Link to="/">
-          <img src={assets.logo} className="" alt="" />
-        </Link>
+        <img src={assets.logo} className="" alt="" />
       </NavLink>
       <ul className="hidden sm:flex gap-5 text-gray-700 ">
         <NavLink
