@@ -12,7 +12,7 @@ const Navbar = () => {
         <img src="/images/logo.png" className="" alt="" />
       </NavLink>
 
-      <ul className="hidden sm:flex gap-5 text-gray-700 ">
+      <ul className="font-medium hidden sm:flex gap-5 text-gray-700 ">
         <NavLink
           to="/"
           className="flex flex-col items-center gap-1 hover:text-gray-950 transition-all ease-in-out duration-200"
