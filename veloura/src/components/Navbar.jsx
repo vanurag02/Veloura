@@ -4,7 +4,8 @@ import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch } = useContext(ShopContext);
+  const { setShowSearch, totalItems, setIsDrawerOpen } =
+    useContext(ShopContext);
 
   return (
     <div className="flex items-center justify-around py-5">
@@ -12,7 +13,7 @@ const Navbar = () => {
         <img src="/images/logo.png" className="w-34" alt="" />
       </NavLink>
 
-      <ul className="font-medium hidden sm:flex gap-5 text-gray-700 ">
+      <ul className="font-medium hidden sm:flex gap-5 text-gray-700">
         <NavLink
           to="/"
           className="flex flex-col items-center gap-1 hover:text-gray-950 transition-all ease-in-out duration-200"
@@ -75,16 +76,18 @@ const Navbar = () => {
         </div>
 
         {/* Cart Icon */}
-        <Link to="/cart" className="relative">
+        <button onClick={() => setIsDrawerOpen(true)} className="relative">
           <img
             src="/images/cart_icon.png"
-            className="w-5 min-w-5"
+            className="w-5 min-w-5 cursor-pointer"
             alt="Cart Icon"
           />
-          <p className="absolute -right-1.25 -bottom-1.25 w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
-            10
-          </p>
-        </Link>
+          {totalItems > 0 && (
+            <p className="absolute -right-1.25 -bottom-1.25 w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
+              {totalItems}
+            </p>
+          )}
+        </button>
 
         {/* Mobile Menu Icon */}
         <img

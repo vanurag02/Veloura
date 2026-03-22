@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
 import TitleUpdater from "./components/TitleUpdater";
+import CartDrawer from "./components/CartDrawer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
       <Navbar />
       <SearchBar />
+      <CartDrawer />
 
       <Routes>
         <Route path="/" element={<Home />} />

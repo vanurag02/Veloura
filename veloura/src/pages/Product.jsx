@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../services/api";
+import { ShopContext } from "../context/ShopContext";
 
 const Product = () => {
   const { productId } = useParams();
@@ -9,6 +10,7 @@ const Product = () => {
   const [image, setImage] = useState("");
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
+  const { addToCart } = useContext(ShopContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -181,7 +183,10 @@ const Product = () => {
           )}
 
           {/* Add to Cart */}
-          <button className="bg-gray-950 text-white hover:bg-black text-[12px] font-medium tracking-[0.14em] uppercase px-7 py-3 w-full cursor-pointer transition-all ease-in-out duration-200 mt-2">
+          <button
+            className="bg-gray-950 text-white hover:bg-black text-[12px] font-medium tracking-[0.14em] uppercase px-7 py-3 w-full cursor-pointer transition-all ease-in-out duration-200 mt-2"
+            onClick={() => addToCart(product, selectedSize)}
+          >
             Add to Cart
           </button>
         </div>
