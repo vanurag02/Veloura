@@ -3,9 +3,9 @@ import NewsLetter from "../components/NewsLetter";
 
 const Contact = () => {
   return (
-    <div className="max-w-5xl mx-auto px-6 sm:px-10 py-16 md:pt-10 md:pb-0">
+    <div className="max-w-6xl mx-auto px-6 sm:px-10 py-16 md:pt-10 md:pb-0 border-t border-gray-300">
       {/* Title */}
-      <p className="text-[16px] font-semibold tracking-wider uppercase text-gray-600 mb-10">
+      <p className="text-[16px] font-semibold tracking-wider uppercase text-gray-400 mb-10">
         Contact Us
       </p>
 
@@ -21,9 +21,7 @@ const Contact = () => {
         {/* Info */}
         <div className="flex flex-col gap-8">
           <div>
-            <p className="text-xl font-medium uppercase text-black mb-4">
-              Our Store
-            </p>
+            <p className="text-xl font-medium text-black mb-4">Our Store</p>
             <p className="text-sm text-gray-500 leading-relaxed font-medium">
               54, MG Road, Koregaon Park <br />
               Pune, Maharashtra — 411001 <br />
@@ -36,7 +34,7 @@ const Contact = () => {
           <div>
             <p className="text-sm text-gray-500 leading-relaxed font-medium">
               Tel: +91 98765 43210 <br />
-              Email: contact@clothify.com
+              Email: contact@veloura.com
             </p>
           </div>
 
@@ -44,12 +42,12 @@ const Contact = () => {
 
           <div>
             <p className="text-xl font-medium text-black mb-4">
-              Careers at Clothify
+              Careers at Veloura
             </p>
             <p className="text-sm text-gray-500 leading-relaxed font-medium mb-6">
-              We're always on the lookout for talented, passionate people. If
-              you love fashion and want to be part of something meaningful, we'd
-              love to hear from you.
+              We’re looking for driven individuals who value creativity,
+              quality, and attention to detail. Be part of Veloura and help us
+              redefine modern fashion retail.
             </p>
             <a
               href="mailto:careers@clothify.com"
@@ -60,9 +58,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      {/* Newsletter */}
-      <NewsLetter />
     </div>
   );
 };

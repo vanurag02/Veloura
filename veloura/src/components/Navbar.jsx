@@ -7,9 +7,9 @@ const Navbar = () => {
   const { setShowSearch } = useContext(ShopContext);
 
   return (
-    <div className="flex items-center justify-around py-5 font-semibold">
+    <div className="flex items-center justify-around py-5">
       <NavLink to="/">
-        <img src="/images/logo.png" className="" alt="" />
+        <img src="/images/logo.png" className="w-34" alt="" />
       </NavLink>
 
       <ul className="font-medium hidden sm:flex gap-5 text-gray-700 ">
@@ -61,13 +61,13 @@ const Navbar = () => {
           />
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 shadow-lg transition-all ease-in-out duration-200">
             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-white text-gray-700 rounded border border-gray-200">
-              <p className="cursor-pointer hover:text-black transition-all ease-in-out duration-200">
+              <p className="text-[15px] font-medium cursor-pointer hover:text-black transition-all ease-in-out duration-200">
                 My Profile
               </p>
-              <p className="cursor-pointer hover:text-black transition-all ease-in-out duration-200">
+              <p className="text-[15px] font-medium cursor-pointer hover:text-black transition-all ease-in-out duration-200">
                 Orders
               </p>
-              <p className="cursor-pointer hover:text-black transition-all ease-in-out duration-200">
+              <p className="text-[15px] font-medium cursor-pointer hover:text-black transition-all ease-in-out duration-200">
                 Logout
               </p>
             </div>

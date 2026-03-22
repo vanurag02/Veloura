@@ -10,7 +10,7 @@ const OurPolicy = () => {
           Clear and simple policies for a better shopping experience.
         </p>
       </div>
-      <div className="flex flex-col sm:flex-row justify-around gap-12 text-center py-20 text-xs sm:text-sm md:text-base text-gray-700">
+      <div className="flex flex-col sm:flex-row justify-around gap-12 text-center pt-4 pb-20 text-xs sm:text-sm md:text-base text-gray-700">
         <div>
           <img
             src="/images/exchange_icon.png"

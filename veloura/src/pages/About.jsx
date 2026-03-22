@@ -22,7 +22,7 @@ const values = [
 
 const About = () => {
   return (
-    <div className="max-w-5xl mx-auto px-6 sm:px-10 py-16 md:pt-10 md:pb-0">
+    <div className="max-w-6xl mx-auto px-6 sm:px-10 py-16 md:pt-10 md:pb-0 border-t border-gray-300">
       {/* Tag */}
       <p className="text-[16px] font-semibold tracking-wider uppercase text-gray-400 mb-10">
         Our Story
@@ -38,21 +38,21 @@ const About = () => {
         />
 
         {/* Text */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-5">
           <h1 className="text-4xl sm:text-5xl font-normal text-gray-900 leading-tight">
-            Clothing made with <em className="text-gray-400">intention,</em> not
-            impulse.
+            Simple styles, <br /> made with{" "}
+            <em className="text-gray-400">intention.</em>
           </h1>
 
           <div className="w-10 h-px bg-gray-300" />
 
-          <p className="text text-gray-800 leading-relaxed font-light">
-            Clothify was born from a simple frustration — too many clothes, not
+          <p className="text text-gray-800 leading-relaxed">
+            Veloura was born from a simple frustration — too many clothes, not
             enough quality. We set out to build a brand that respects both the
             person wearing it and the craft behind it.
           </p>
 
-          <p className="text text-gray-800 leading-relaxed font-light">
+          <p className="text text-gray-800 leading-relaxed">
             Every piece we design starts with a question: will this still feel
             right five years from now? If the answer is yes, we make it. If not,
             we go back to the drawing board.
@@ -64,21 +64,16 @@ const About = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 border-t border-gray-200 pt-16 mb-20">
         {values.map((v) => (
           <div key={v.number}>
-            <p className="text-6xl font-medium text-gray-300 mb-6">
+            <p className="text-6xl font-medium text-[#e3e6ea] mb-6">
               {v.number}
             </p>
             <p className="text-xl font-medium uppercase text-black mb-2">
               {v.title}
             </p>
-            <p className="text-sm text-gray-600 leading-relaxed font-light">
-              {v.desc}
-            </p>
+            <p className="text-sm text-gray-600 leading-relaxed">{v.desc}</p>
           </div>
         ))}
       </div>
-
-      {/* Newsletter */}
-      <NewsLetter />
     </div>
   );
 };

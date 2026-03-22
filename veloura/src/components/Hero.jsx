@@ -12,7 +12,7 @@ const Hero = () => {
     <div className="bg-white grid grid-cols-1 md:grid-cols-2 min-h-105">
       {/* Left — Text */}
       <div className="flex flex-col justify-center gap-6 px-8 sm:px-16 md:px-20 py-16">
-        <span className="text-[14px] tracking-widest uppercase text-gray-500 font-medium">
+        <span className="text-[14px] tracking-wider uppercase text-gray-500 font-medium">
           New Collection — 2026
         </span>
 
@@ -20,7 +20,7 @@ const Hero = () => {
           Style that speaks <em className="text-gray-500">before</em> you do.
         </h1>
 
-        <p className="text-[20px] text-sm text-black leading-relaxed max-w-sm font-light">
+        <p className="text-[20px] text-sm text-gray-600 leading-relaxed max-w-sm">
           Crafted for those who value quality over quantity — from sharp
           everyday essentials to refined statement pieces.
         </p>
@@ -37,10 +37,8 @@ const Hero = () => {
       <div className="flex flex-col justify-center md:border-t-0 md:border-l border-gray-300 px-8 sm:px-16 md:px-20 py-12 md:py-0">
         {stats.map((stat, i) => (
           <div key={i} className="py-8 first:pt-0 last:pb-0">
-            <p className="text-5xl font-semibold text-black leading-none">
-              {stat.number}
-            </p>
-            <p className="text-[14px] tracking-wide uppercase text-gray-800 font-medium mt-2">
+            <p className="text-5xl text-gray-900 leading-none">{stat.number}</p>
+            <p className="text-[14px] tracking-wide uppercase text-gray-400 font-medium mt-2">
               {stat.label}
             </p>
           </div>

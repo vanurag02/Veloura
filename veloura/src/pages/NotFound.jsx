@@ -6,7 +6,7 @@ const NotFound = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 min-h-[80vh]">
       {/* Left — Big 404 */}
       <div className="flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-200 py-16 md:py-0">
-        <p className="text-[12rem] md:text-[16rem] font-bold text-gray-200 leading-none select-none tracking-tighter">
+        <p className="text-[12rem] md:text-[16rem] font-bold text-gray-200 leading-none select-none">
           404
         </p>
       </div>
