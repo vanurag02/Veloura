@@ -62,15 +62,12 @@ const Navbar = () => {
           />
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 shadow-lg transition-all ease-in-out duration-200">
             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-white text-gray-700 rounded border border-gray-200">
-              <p className="text-[15px] font-medium cursor-pointer hover:text-black transition-all ease-in-out duration-200">
-                My Profile
-              </p>
-              <p className="text-[15px] font-medium cursor-pointer hover:text-black transition-all ease-in-out duration-200">
-                Orders
-              </p>
-              <p className="text-[15px] font-medium cursor-pointer hover:text-black transition-all ease-in-out duration-200">
-                Logout
-              </p>
+              <NavLink
+                to="/login"
+                className="text-[15px] font-medium cursor-pointer hover:text-black transition-all ease-in-out duration-200"
+              >
+                Login
+              </NavLink>
             </div>
           </div>
         </div>

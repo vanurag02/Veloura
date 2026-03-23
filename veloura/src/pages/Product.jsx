@@ -3,6 +3,98 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../services/api";
 import { ShopContext } from "../context/ShopContext";
 
+// ================= DELIVERY OPTIONS =================
+const DeliveryOptions = () => {
+  const [pincode, setPincode] = useState("");
+  const [status, setStatus] = useState(null); // null | "checking" | "available" | "unavailable"
+
+  const checkDelivery = () => {
+    if (pincode.length !== 6) return;
+    setStatus("checking");
+    setTimeout(() => {
+      // Pincodes starting with 4 are serviceable (simulate)
+      setStatus(pincode.startsWith("4") ? "available" : "unavailable");
+    }, 800);
+  };
+
+  const deliveryDate = new Date();
+  deliveryDate.setDate(deliveryDate.getDate() + 5);
+  const formattedDate = deliveryDate.toLocaleDateString("en-IN", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+  });
+
+  return (
+    <div className="border border-gray-100 p-4 mt-2">
+      <p className="text-[14px] font-semibold tracking-wide uppercase text-gray-700 mb-3">
+        Delivery Options
+      </p>
+
+      {/* Pincode Input */}
+      <div className="flex items-center border border-gray-200 mb-4">
+        <input
+          type="text"
+          maxLength={6}
+          value={pincode}
+          onChange={(e) => {
+            setPincode(e.target.value.replace(/\D/g, ""));
+            setStatus(null);
+          }}
+          onKeyDown={(e) => e.key === "Enter" && checkDelivery()}
+          placeholder="Enter pincode"
+          className="flex-1 px-3 py-2.5 text-sm outline-none placeholder-gray-500"
+        />
+        {status === "available" && (
+          <i className="bi bi-check-circle-fill text-green-500 px-2 text-sm" />
+        )}
+        <button
+          onClick={checkDelivery}
+          disabled={pincode.length !== 6}
+          className="font-medium bg-gray-950 text-white hover:bg-black text-[12px] uppercase px-3 py-2.5 transition-all disabled:text-gray-300 border-l border-gray-200"
+        >
+          {status === "checking" ? "..." : "Check"}
+        </button>
+      </div>
+
+      {/* Unavailable message */}
+      {status === "unavailable" && (
+        <p className="text-sm font-medium text-red-500 mb-3 -mt-2">
+          Delivery not available for this pincode.
+        </p>
+      )}
+
+      {/* Info rows */}
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center gap-3">
+          <i className="bi bi-truck text-gray-900 font-medium text-base w-5 text-center" />
+          <p className="text-sm text-gray-600">
+            {status === "available" ? (
+              <>
+                Get it by{" "}
+                <span className="font-medium text-gray-900">
+                  {formattedDate}
+                </span>
+              </>
+            ) : (
+              "Enter pincode to check delivery date"
+            )}
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <i className="bi bi-cash-coin text-gray-900 font-medium text-base w-5 text-center" />
+          <p className="text-sm text-gray-600">Pay on delivery available</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <i className="bi bi-arrow-counterclockwise text-gray-900 font-medium text-base w-5 text-center" />
+          <p className="text-sm text-gray-600">Easy 7 days return & exchange</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ================= PRODUCT PAGE =================
 const Product = () => {
   const { productId } = useParams();
 
@@ -42,7 +134,7 @@ const Product = () => {
       <div className="flex flex-col md:flex-row gap-12">
         {/* LEFT — Images */}
         <div className="flex-1 flex gap-5">
-          {/* Thumbnails — main images only (excluding color images) */}
+          {/* Thumbnails */}
           <div className="flex flex-col gap-2">
             {product.images
               .slice(0, product.images.length - (product.colors?.length || 0))
@@ -173,7 +265,7 @@ const Product = () => {
                 ))}
               </div>
 
-              {/* Stock indicator — shows after size is selected */}
+              {/* Stock indicator */}
               {selectedVariant?.stock > 0 && selectedVariant.stock < 5 && (
                 <p className="text-[14px] font-medium text-orange-500 mt-2">
                   Only {selectedVariant.stock} left — hurry!
@@ -189,6 +281,9 @@ const Product = () => {
           >
             Add to Cart
           </button>
+
+          {/* Delivery Options */}
+          <DeliveryOptions />
         </div>
       </div>
     </div>

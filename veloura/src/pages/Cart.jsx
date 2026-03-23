@@ -34,15 +34,15 @@ const Cart = () => {
         </div>
         <div>
           <p className="text-[28px] font-medium text-black mb-1">
-            Your cart is empty
+            Empty cart, full potential
           </p>
           <p className="text-[24px] text-gray-600 leading-relaxed">
-            Looks like you haven't added anything yet.
+            Start adding items to bring your style to life.
           </p>
         </div>
         <Link
           to="/collection"
-          className="bg-gray-950 text-white hover:bg-black text-[14px] font-medium tracking-[0.14em] uppercase px-7 py-3 transition-colors duration-200 mt-2"
+          className="bg-gray-950 text-white hover:bg-black text-[14px] font-medium tracking-wider uppercase px-7 py-3 transition-colors duration-200 mt-2"
         >
           Start Shopping
         </Link>
@@ -53,7 +53,7 @@ const Cart = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 sm:px-10 py-16">
       {/* Title */}
-      <p className="text-[26px] font-semibold tracking-wide text-black mb-10">
+      <p className="text-[26px] font-semibold text-black mb-10">
         Your Cart
         <span className="ml-2 text-gray-500 font-normal text-sm">
           ({cartItems.length} {cartItems.length === 1 ? "item" : "items"})

@@ -70,7 +70,7 @@ const CartDrawer = () => {
                 <p className="text-[18px] font-medium text-black mb-1">
                   Your cart is empty
                 </p>
-                <p className="text-[14px] text-gray-600 leading-relaxed">
+                <p className="text-[16px] text-gray-600 leading-relaxed">
                   Looks like you haven't added anything yet.
                 </p>
               </div>

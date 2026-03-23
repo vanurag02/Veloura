@@ -16,7 +16,7 @@ const Hero = () => {
           New Collection — 2026
         </span>
 
-        <h1 className="text-5xl sm:text-6xl font-normal text-black leading-tight">
+        <h1 className="text-5xl sm:text-6xl font-medium text-black leading-tight">
           Style that speaks <em className="text-gray-500">before</em> you do.
         </h1>
 
@@ -37,8 +37,10 @@ const Hero = () => {
       <div className="flex flex-col justify-center md:border-t-0 md:border-l border-gray-300 px-8 sm:px-16 md:px-20 py-12 md:py-0">
         {stats.map((stat, i) => (
           <div key={i} className="py-8 first:pt-0 last:pb-0">
-            <p className="text-5xl text-gray-900 leading-none">{stat.number}</p>
-            <p className="text-[14px] tracking-wide uppercase text-gray-400 font-medium mt-2">
+            <p className="text-5xl font-medium text-gray-900 leading-none">
+              {stat.number}
+            </p>
+            <p className="text-[16px] tracking-wide uppercase text-gray-500 font-medium mt-2">
               {stat.label}
             </p>
           </div>

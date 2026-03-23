@@ -7,6 +7,7 @@ const routeTitles = {
   "/about": "Veloura – About Us",
   "/contact": "Veloura – Contact",
   "/cart": "Veloura – Your Cart",
+  "/login": "Veloura – Login",
 };
 
 const TitleUpdater = () => {
