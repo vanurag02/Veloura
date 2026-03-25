@@ -50,14 +50,14 @@ const Footer = () => {
 
           <ul className="flex flex-col gap-2">
             <li>+91 98765 43210</li>
-            <li>contact@clothify.com</li>
+            <li>contact@veloura.com</li>
           </ul>
         </div>
       </div>
 
       {/* =============== 3. BOTTOM FOOTER (COPYRIGHT SECTION) =============== */}
       <div className="border-t border-gray-200 pt-5 my-10 text-center font-medium text-gray-500">
-        © {currentYear} Clothify. All rights reserved.
+        © {currentYear} Veloura. All rights reserved.
       </div>
     </div>
   );
